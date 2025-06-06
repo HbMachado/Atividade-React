@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Botão com React (sem JSX)</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const { useState } = React;
+
+    function Botao() {
+      const [corAzul, setCorAzul] = useState(true);
+
+      const mudarCor = () => setCorAzul(!corAzul);
+
+      return React.createElement(
+        'button',
+        {
+          onClick: mudarCor,
+          style: {
+            padding: '10px 20px',
+            backgroundColor: corAzul ? 'blue' : 'green',
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer'
+          }
+        },
+        'Clique em mim'
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(Botao));
+  </script>
+</body>
+</html>
