@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Botão Tradicional</title>
+  <style>
+    #meuBotao {
+      padding: 10px 20px;
+      background-color: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="meuBotao">Clique em mim</button>
+
+  <script>
+    const botao = document.getElementById('meuBotao');
+    let corAzul = true;
+
+    botao.addEventListener('click', () => {
+      corAzul = !corAzul;
+      botao.style.backgroundColor = corAzul ? 'blue' : 'green';
+    });
+  </script>
+</body>
+</html>
